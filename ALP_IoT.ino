@@ -3,10 +3,10 @@
 #include <Firebase_ESP_Client.h>
 
 // WiFi Credentials
-#define WIFI_SSID     "Topher2005"
-#define WIFI_PASSWORD "tOpher20156879"
+#define WIFI_SSID     "WIFI_NAME"
+#define WIFI_PASSWORD "WIFI_PASSWORD"
 
-// Firebase Placeholders
+// Firebase Credentials
 #define FIREBASE_API_KEY      "AIzaSyC-LhMRAQJq88FhUai68BfAkQ5s2CfDM24"
 #define FIREBASE_DATABASE_URL "https://iot-alp-46c09-default-rtdb.asia-southeast1.firebasedatabase.app"
 
