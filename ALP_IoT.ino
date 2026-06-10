@@ -3,8 +3,8 @@
 #include <Firebase_ESP_Client.h>
 
 // WiFi Credentials
-#define WIFI_SSID     "WIFI_NAME"
-#define WIFI_PASSWORD "WIFI_PASSWORD"
+#define WIFI_SSID     "Topher2005"
+#define WIFI_PASSWORD "tOpher20156879"
 
 // Firebase Credentials
 #define FIREBASE_API_KEY      "AIzaSyC-LhMRAQJq88FhUai68BfAkQ5s2CfDM24"
@@ -19,7 +19,7 @@
 #define PIN_RST  33
 
 // Thresholds
-const float RISE_THRESHOLD = 0.25;  // triggers POTENTIAL_FLOOD (in cm)
+const float RISE_THRESHOLD = 1.0;  // triggers POTENTIAL_FLOOD (in cm)
 const float DROP_MARGIN = 2.0;   // water must drop at least this much to clear flood state (in cm)
 
 // RTC Setup (RST, CLK, DAT)
@@ -160,6 +160,8 @@ void loop() {
         ledBlinkActive = true;
         floodPeakDistance = currentDistance; // record distance when flood was triggered
         pushLog(timestamp, currentDistance, riseSpeed, "POTENTIAL_FLOOD");
+      } else if (floodPeakDistance = -1) {
+        pushLog(timestamp, currentDistance, 0.0, "SAFE");
       }
     } else {
       // FLOOD: check if water level has dropped enough from when alert triggered
