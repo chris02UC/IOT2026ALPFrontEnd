@@ -160,7 +160,7 @@ void loop() {
         ledBlinkActive = true;
         floodPeakDistance = currentDistance; // record distance when flood was triggered
         pushLog(timestamp, currentDistance, riseSpeed, "POTENTIAL_FLOOD");
-      } else if (floodPeakDistance = -1) {
+      } else if (floodPeakDistance == -1) {
         pushLog(timestamp, currentDistance, 0.0, "SAFE");
       }
     } else {
